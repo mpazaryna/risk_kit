@@ -39,31 +39,3 @@ def classify_risk(data):
     numpy.ndarray: An array of risk classifications (0 or 1) for each entry in the dataset.
     """
     return np.array([assess_risk(row[0], row[1], row[2]) for row in data])
-
-
-def assess_mortgage_eligibility(annual_income, credit_score, down_payment):
-    """
-    Assess mortgage eligibility based on income, credit score, and down payment.
-
-    Parameters:
-    annual_income (float): The annual income of the individual.
-    credit_score (int): The credit score of the individual.
-    down_payment (float): The down payment amount.
-
-    Returns:
-    bool: True if eligible for a mortgage, False otherwise.
-    """
-    home_price = 500000
-    required_income = home_price * 0.2
-    required_down_payment = home_price * 0.1
-
-    if (
-        annual_income >= required_income
-        and credit_score >= 650
-        and down_payment >= required_down_payment
-    ):
-        eligibility = True
-    else:
-        eligibility = False
-
-    return eligibility

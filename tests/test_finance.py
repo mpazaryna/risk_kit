@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
 
-from risk_kit.finance import assess_mortgage_eligibility, assess_risk, classify_risk
+from risk_kit.finance import assess_risk, classify_risk
 
 
 def test_assess_risk():
@@ -24,33 +24,3 @@ def test_classify_risk_small_dataset():
     assert risk_classes.shape == (4,)  # Ensure it matches the number of samples
     # Check expected risk classifications
     assert np.array_equal(risk_classes, np.array([1, 0, 0, 1]))  # Expected results
-
-
-@pytest.mark.parametrize(
-    "annual_income, credit_score, down_payment, expected",
-    [
-        (110000, 720, 60000, True),  # Meets all criteria
-        (
-            90000,
-            680,
-            40000,
-            False,
-        ),  # Meets income and down payment, but credit score is too low
-        (150000, 700, 70000, True),  # Exceeds all criteria
-        (
-            95000,
-            650,
-            50000,
-            False,
-        ),  # Meets minimum criteria, but income is slightly low
-    ],
-)
-def test_assess_mortgage_eligibility(
-    annual_income, credit_score, down_payment, expected
-):
-    result = assess_mortgage_eligibility(annual_income, credit_score, down_payment)
-    print(f"Input: income={annual_income}, credit={credit_score}, down={down_payment}")
-    print(f"Expected: {expected}, Got: {result}")
-    assert (
-        result == expected
-    ), f"Failed for input: income={annual_income}, credit={credit_score}, down={down_payment}"

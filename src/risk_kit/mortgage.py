@@ -34,3 +34,29 @@ def calculate_mortgage_risk(loan_amount, property_value):
         risk_score = 4
 
     return risk_score
+
+
+def assess_mortgage_eligibility(annual_income, credit_score, down_payment, home_price):
+    """
+    Assess mortgage eligibility based on income, credit score, and down payment.
+
+    Parameters:
+    annual_income (float): The annual income of the individual.
+    credit_score (int): The credit score of the individual.
+    down_payment (float): The down payment amount.
+    home_price (float): The price of the home.
+
+    Returns:
+    bool: True if eligible for a mortgage, False otherwise.
+    """
+    required_income = home_price * 0.2  # 20% of home price
+    required_down_payment = home_price * 0.1  # 10% of home price
+
+    # Check eligibility conditions
+    if (
+        annual_income >= required_income
+        and credit_score >= 650
+        and down_payment >= required_down_payment
+    ):
+        return True  # Eligible
+    return False  # Not eligible

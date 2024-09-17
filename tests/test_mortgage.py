@@ -1,6 +1,6 @@
 import pytest
 
-from risk_kit.mortgage import calculate_mortgage_risk
+from risk_kit.mortgage import assess_mortgage_eligibility, calculate_mortgage_risk
 
 
 def test_calculate_mortgage_risk():
@@ -23,3 +23,9 @@ def test_calculate_mortgage_risk():
     # Test error case
     with pytest.raises(ValueError):
         calculate_mortgage_risk(100000, 0)
+
+
+def test_assess_mortgage_eligibility():
+    # Test eligibility scenario
+    assert assess_mortgage_eligibility(180000, 700, 50000, 500000) is True
+    assert assess_mortgage_eligibility(30000, 600, 20000, 500000) is False

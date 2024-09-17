@@ -33,6 +33,3 @@ def volatility_risk(price_history):
     risk_score = min(std_dev / 0.1, 1)
 
     return risk_score
-
-
-# test_stock_risk_calculator.py
