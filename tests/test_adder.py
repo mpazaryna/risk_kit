@@ -1,6 +1,11 @@
+import logging
+
 import pytest
 
 from risk_kit.adder import add, multiply, subtract
+
+# Configure logging for the tests
+logging.basicConfig(level=logging.INFO)
 
 
 def test_add():
