@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "risk_kit"
+version = "0.1.0"
+description = "All things risk"
+authors = ["Matthew Pazaryna <52605785+mpazaryna@users.noreply.github.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pytest = "^8.3.3"
+numpy = "^2.1.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
