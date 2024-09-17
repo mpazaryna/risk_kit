@@ -1,7 +1,8 @@
 import numpy as np
 import pytest
 
-from risk_kit.finance import assess_mortgage_eligibility, assess_risk, classify_risk
+from risk_kit.finance import (assess_mortgage_eligibility, assess_risk,
+                              classify_risk)
 
 
 def test_assess_risk():
