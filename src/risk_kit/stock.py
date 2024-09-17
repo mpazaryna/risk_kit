@@ -1,6 +1,6 @@
-# src/risk_kit/stock_risk_calculator.py
-
 import math
+
+# src/risk_kit/stock_risk_calculator.py
 
 
 def volatility_risk(price_history):

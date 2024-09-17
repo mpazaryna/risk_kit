@@ -1,3 +1,5 @@
+import math
+
 import pytest
 
 from risk_kit.stock import volatility_risk
