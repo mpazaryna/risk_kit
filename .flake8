@@ -16,7 +16,7 @@ This configuration file for Flake8 specifies the following:
 - select: Specifies which error codes to check.
 - docstring-convention: Sets the docstring style to Google.
 - per-file-ignores: Specifies ignores for specific files:
-    - __init__.py: Ignore F401 (module imported but unused)
+    - __init__.py: Ignore F401 (module imported but unused) and D104 (missing docstring)
     - tests/*: Ignore D100, D101, D102, D103 (docstring-related checks)
     - docs/source/conf.py: Ignore E402 (module level import not at top of file)
 """
@@ -28,5 +28,5 @@ select = B,C,E,F,W,T4,B9
 docstring-convention = google
 per-file-ignores =
     __init__.py:F401, D104
-    tests/*:D100,D101,D102,D103,D104,D105,D106,D107,E501
+    tests/*:D100,D101,D102,D103,D104,D105,D106,D107,E501,D104
     docs/source/conf.py:E402
